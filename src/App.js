@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AppToolBar from "./components/toolbar";
+import Contact from "./components/contacts";
+import axios from "axios";
 
 class App extends Component {
+  state = {
+    contactData: []
+  }
+
+  getData = () => {
+    axios.get('http://localhost:3004/data'
+    ).then(response => {
+      this.setState({contactData: response.data})
+    });
+  }
+ 
+  componentDidMount = () => {
+    this.getData();
+  }
+
+  handleContactUpdate = (newContact) => {
+    this.setState({contactData: newContact})
+    // console.log("newcontact=>",newContact)
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <AppToolBar
+          contacts={this.state.contactData}
+          text="Contact List"
+          onContactUpdate={this.handleContactUpdate}/>
+        <Contact
+          contacts={this.state.contactData}
+          onContactUpdate={this.handleContactUpdate}/>
       </div>
     );
   }
