@@ -1,4 +1,4 @@
-# Mock API using json-server
+# Mock API & Server using json-server
 ```
   file: mockcontactlist.json
 ``` 
