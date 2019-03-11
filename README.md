@@ -1,6 +1,6 @@
 # Mock API & Server using json-server
 ```
-  file: mockcontactlist.json
+  npm install -g json-server
 ``` 
 # Components using Material-ui
 
