@@ -23,8 +23,8 @@ class FormDialog extends React.Component {
     }));
   };
  
-  handleChange = field => e => {
-    this.setState({[field]: e.target.value});
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value});
   };
 
   postContact = () => {
@@ -89,39 +89,46 @@ class FormDialog extends React.Component {
           onClose={this.toggleOpen}
           aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">{this.props.title}</DialogTitle>
+
           <DialogContent>
             <TextField
-              value={this.state.firstName}
-              onChange={this.handleChange('firstName')}
-              margin="dense"
-              label="First Name"
+              value = {this.state.firstName}
+              name = "firstName"
+              onChange = {this.handleChange}
+              margin = "dense"
+              label = "First Name"
               fullWidth/>
             <TextField
-              value={this.state.lastName}
-              onChange={this.handleChange('lastName')}
-              margin="dense"
-              label="Last Name"
+              value = {this.state.lastName}
+              name = "lastName"
+              onChange = {this.handleChange}
+              margin = "dense"
+              label = "Last Name"
               fullWidth/>
             <TextField
               value = {this.state.age}
-              onChange={this.handleChange('age')}
-              margin="dense"
-              label="Age"
-              type="number"
+              name = "age"
+              onChange = {this.handleChange}
+              margin = "dense"
+              label = "Age"
+              type = "number"
               fullWidth/>
             <TextField
               value = {this.state.photo}
-              onChange={this.handleChange('photo')}
-              margin="dense"
-              label="Photo Url"
+              name = "photo"
+              onChange = {this.handleChange}
+              margin = "dense"
+              label = "Photo Url"
               fullWidth/>
           </DialogContent>
+
           <DialogActions>
             <Button onClick={this.toggleOpen} color="primary">
               Cancel
             </Button>
             {button}
           </DialogActions>
+
         </Dialog>
       </div>
     );
@@ -129,7 +136,8 @@ class FormDialog extends React.Component {
 }
 
 FormDialog.propTypes = {
-  contacts: PropTypes.object.isRequired
+  contacts: PropTypes.object.isRequired,
+  id: propTypes.string.isRequired
 }
 
 export default (FormDialog);
