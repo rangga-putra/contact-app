@@ -137,7 +137,7 @@ class FormDialog extends React.Component {
 
 FormDialog.propTypes = {
   contacts: PropTypes.object.isRequired,
-  id: propTypes.string.isRequired
+  id: PropTypes.string.isRequired
 }
 
 export default (FormDialog);

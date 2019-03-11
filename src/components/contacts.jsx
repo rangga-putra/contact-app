@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CreateIcon from '@material-ui/icons/Create';
 import FormDialog from "./dialogbox";
+import Divider from '@material-ui/core/Divider'
 
 const styles = theme => ({
     paper: {
@@ -51,9 +52,9 @@ class Contact extends React.Component{
             <div>
             <CssBaseline />
             <Paper square className={classes.paper}>
-            
                 <List className={classes.list}>
                 { contacts.map((item, index) => (
+                  <div>
                     <ListItem key={index} button>
 
                         <Avatar alt="Profile Picture" src={item.photo}/>
@@ -75,6 +76,9 @@ class Contact extends React.Component{
                         </IconButton>
 
                     </ListItem>
+                    
+                    <Divider variant="inset" />
+                  </div>
                 ))}
                 </List>
 
