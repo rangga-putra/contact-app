@@ -54,7 +54,7 @@ class Contact extends React.Component{
             <Paper square className={classes.paper}>
                 <List className={classes.list}>
                 { contacts.map((item, index) => (
-                  <div>
+                  <>
                     <ListItem key={index} button>
 
                         <Avatar alt="Profile Picture" src={item.photo}/>
@@ -78,7 +78,7 @@ class Contact extends React.Component{
                     </ListItem>
                     
                     <Divider variant="inset" />
-                  </div>
+                  </>
                 ))}
                 </List>
 
