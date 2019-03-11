@@ -102,7 +102,7 @@ class FormDialog extends React.Component {
               margin="dense"
               id="lastname"
               label="Last Name"
-              fullWidth/>f
+              fullWidth/>
             <TextField
               value = {this.state.age}
               onChange={this.handleChange('age')}
