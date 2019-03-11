@@ -41,6 +41,20 @@
       "age": "100",
       "photo": "https://ichef.bbci.co.uk/news/660/cpsprodpb/16620/production/_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg",
       "id": "Y0iPxwC"
+    },
+    {
+      "firstName": "Bad Luck",
+      "lastName": "Brian",
+      "age": "31",
+      "photo": "https://files.slack.com/files-pri/T0256N200-FGU9MM60K/badluck_brian.jpg",
+      "id": "EXyIF2g"
+    },
+    {
+      "firstName": "Larry",
+      "lastName": "The Lobster",
+      "age": "29",
+      "photo": "https://vignette.wikia.nocookie.net/spongebob/images/7/76/Larry_current.png/revision/latest/scale-to-width-down/350?cb=20181231134825",
+      "id": "kLfxgDu"
     }
   ]
 }

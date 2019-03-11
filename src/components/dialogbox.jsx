@@ -67,6 +67,7 @@ class FormDialog extends React.Component {
 
   render() {
     const { id } = this.props;
+
     let button;
     if (this.props.title==='Add New Contact')
     {
@@ -91,23 +92,20 @@ class FormDialog extends React.Component {
           <DialogContent>
             <TextField
               value={this.state.firstName}
-              onChange={this.handleChange}
+              onChange={this.handleChange('firstName')}
               margin="dense"
-              id="firstname"
               label="First Name"
               fullWidth/>
             <TextField
               value={this.state.lastName}
-              onChange={ () => this.handleChange('lastName')}
+              onChange={this.handleChange('lastName')}
               margin="dense"
-              id="lastname"
               label="Last Name"
               fullWidth/>
             <TextField
               value = {this.state.age}
               onChange={this.handleChange('age')}
               margin="dense"
-              id="age"
               label="Age"
               type="number"
               fullWidth/>
@@ -115,7 +113,6 @@ class FormDialog extends React.Component {
               value = {this.state.photo}
               onChange={this.handleChange('photo')}
               margin="dense"
-              id="photo"
               label="Photo Url"
               fullWidth/>
           </DialogContent>

@@ -38,13 +38,14 @@ class AppToolBar extends React.Component {
             color="inherit">
             <AddIcon/>
           </IconButton>
-          <FormDialog
-            title="Add New Contact"
-            ref={this.dialogboxElement}
-            contacts = {this.props.contacts}
-            onContactUpdate={onContactUpdate}/>
         </Toolbar>
       </AppBar>
+
+      <FormDialog
+        title="Add New Contact"
+        ref={this.dialogboxElement}
+        contacts = {this.props.contacts}
+        onContactUpdate={onContactUpdate}/>
     </div>
     );
   }

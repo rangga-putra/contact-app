@@ -23,10 +23,16 @@ const styles = theme => ({
   });
 
 class Contact extends React.Component{
+
   dialogboxElement=React.createRef();
-  
-  handleClickOpen = () => {
+
+  state = {
+    id: ''
+  }
+
+  handleClickOpen = (selectedId) => {
     this.dialogboxElement.current.toggleOpen();
+    this.setState({id: selectedId});
   }
 
   delContact = (contact, id) => {
@@ -45,32 +51,40 @@ class Contact extends React.Component{
             <div>
             <CssBaseline />
             <Paper square className={classes.paper}>
+            
                 <List className={classes.list}>
                 { contacts.map((item, index) => (
                     <ListItem key={index} button>
+
                         <Avatar alt="Profile Picture" src={item.photo}/>
+
                         <ListItemText 
                           primary={item.firstName+" "+item.lastName}
                           secondary={'age: ' + item.age} />
+
                         <IconButton 
                           aria-label="Edit"
-                          onClick={this.handleClickOpen}>
-                        <CreateIcon/>
+                          onClick={()=>this.handleClickOpen(item.id)}>
+                          <CreateIcon/>
                         </IconButton>
-                        <FormDialog
-                          title="Edit Contact"
-                          ref={this.dialogboxElement}
-                          contacts={contacts}
-                          onContactUpdate={onContactUpdate}
-                          id={item.id}/>
+
                         <IconButton 
                           aria-label="Delete" 
                           onClick={()=>this.delContact(contacts,item.id)}>
-                        <DeleteIcon />
+                          <DeleteIcon />
                         </IconButton>
+
                     </ListItem>
                 ))}
                 </List>
+
+                <FormDialog
+                  title="Edit Contact"
+                  ref={this.dialogboxElement}
+                  contacts={contacts}
+                  onContactUpdate={onContactUpdate}
+                  id={this.state.id}/>
+                  
             </Paper>
            </div>
         );
